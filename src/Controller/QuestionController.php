@@ -7,7 +7,11 @@ use App\Model\QuestionManager;
 class QuestionController extends AbstractController
 {
 
-    public function index()
+    /**
+     * @return string
+     * Displays a random question and its possible choices.
+     */
+    public function index(): string
     {
         $questionManager = new QuestionManager();
         $question = $questionManager->selectOneRandom();
