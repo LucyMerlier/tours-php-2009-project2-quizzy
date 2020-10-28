@@ -1,42 +1,37 @@
+<!-- This is the base layout for the actual project we are developping : Quizzy. It is not used yet but will very soon! -->
+
 <!DOCTYPE html>
-
-<html>
-
-  <head>
-
-    <meta charset="UTF-8">
-    <title>
-        {% block title %}
-        Quizzy
+<html lang = "fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>
+            {% block title %}
+            Quizzy
+            {% endblock %}
+        </title>
+        <link rel = "stylesheet" href = "/assets/css/style.css">
+        {% block stylesheets %}
         {% endblock %}
-    </title>
+    </head>
 
-    {% block stylesheets %}
-    <link rel = "stylesheet" href = "mainStyle.css">
-    {% endblock %}
-
-  </head>
-
-  <body>
-
-    <header>
-        <h1>Quizzy</h1>
-    </header>
-
-    {% block content %}
-    {% endblock %}
-
-    {% block scripts %}
-    {% endblock %}
-
-    <footer>
-        <ul>
-            <li><a href = "">F.A.Q</a></li>
-            <li><a href = "">About Us</a></li>
-            <li><a href = "">Legal Mentions</a></li>
-        </ul>
-    </footer>
-
-  </body>
-
+    <body>
+        <header>
+            <h1>Quizzy</h1>
+        </header>
+        {% block content %}
+        <p>Don't like the questions you get?<p>
+        <button>ADD YOUR OWN !!!</button>
+        {% endblock %}
+        <footer>
+            <ul>
+                <li><a href = "" class = "footerLink">F.A.Q</a></li>
+                <li><a href = "" class = "footerLink">About Us</a></li>
+                <li><a href = "" class = "footerLink">Legal Mentions</a></li>
+            </ul>
+        </footer>
+        {% block scripts %}
+        {% endblock %}
+    </body>
 </html>
