@@ -38,12 +38,12 @@ ALTER TABLE choice ADD CONSTRAINT fk_choice_question FOREIGN KEY (question_id) R
 --
 -- Add foreign key to link 'author' and 'question'
 --
-ALTER TABLE choice ADD CONSTRAINT fk_question_author FOREIGN KEY (author_id) REFERENCES author(id);
+ALTER TABLE question ADD CONSTRAINT fk_question_author FOREIGN KEY (author_id) REFERENCES author(id);
 
 --
 -- Add foreign key to link 'theme' and 'question'
 --
-ALTER TABLE choice ADD CONSTRAINT fk_question_theme FOREIGN KEY (theme_id) REFERENCES theme(id);
+ALTER TABLE question ADD CONSTRAINT fk_question_theme FOREIGN KEY (theme_id) REFERENCES theme(id);
 
 --
 -- Table 'theme' : test content
