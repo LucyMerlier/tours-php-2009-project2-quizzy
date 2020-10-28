@@ -18,11 +18,11 @@ class QuestionManager extends AbstractManager
     public function selectChoices(int $id): array
     {
         // prepared request
-        $statement = $this->pdo->prepare("SELECT answer , choice.id FROM $this->table JOIN choice WHERE question_id=:id AND question.id=:id ORDER BY choice.id");
+        $statement = $this->pdo->prepare("SELECT answer , choice.id FROM $this->table JOIN choice
+        WHERE question_id=:id AND question.id=:id ORDER BY choice.id");
         $statement->bindValue('id', $id, \PDO::PARAM_INT);
         $statement->execute();
 
         return $statement->fetchAll();
     }
-
 }

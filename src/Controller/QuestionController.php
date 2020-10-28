@@ -15,5 +15,4 @@ class QuestionController extends AbstractController
 
         return $this->twig->render('Question/index.html.twig', ['question' => $question , 'choices' => $choices]);
     }
-
 }
