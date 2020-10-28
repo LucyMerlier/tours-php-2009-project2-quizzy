@@ -7,6 +7,9 @@ This repository is a simple PHP MVC structure from scratch.
 It uses some cool vendors/libraries such as Twig and Grumphp.
 For this one, just a simple example where users can choose one of their databases and see tables in it.
 
+This simple MVC structure serves as a basis for a "quizz" type of web application called "Quizzy" that will propose an infinite flow of random questions to the user. This application is still in a very early stage of developpment and none of its functionalities are available yet. You still play with the default test functionalities while you wait for Quizzy to come out!
+
+
 ### Check on Travis
 
 Travis is checking your code. It's a Continuous Integration (CI) service used on this repository to launch the code verification tools on the github repository itself.
@@ -27,9 +30,10 @@ define('APP_DB_USER', 'your_db_user_wich_is_not_root');
 define('APP_DB_PWD', 'your_db_password');
 ```
 4. Import `simple-mvc.sql` in your SQL server,
-5. Run the internal PHP webserver with `php -S localhost:8000 -t public/`. The option `-t` with `public` as parameter means your localhost will target the `/public` folder.
-6. Go to `localhost:8000` with your favorite browser.
-7. From this starter kit, create your own web application.
+5. You don't need to import `db.sql` yet, it will serve its purpose once the first test version of Quizzy is out.
+6. Run the internal PHP webserver with `php -S localhost:8000 -t public/`. The option `-t` with `public` as parameter means your localhost will target the `/public` folder.
+7. Go to `localhost:8000` with your favorite browser.
+8. From this starter kit, create your own web application.
 
 ### Windows Users
 
