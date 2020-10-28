@@ -15,6 +15,13 @@ class QuestionManager extends AbstractManager
         parent::__construct(self::TABLE);
     }
 
+    public function selectOneRandom()
+    {
+        $statement = $this->pdo->query("SELECT * FROM $this->table ORDER BY RAND() LIMIT 1");
+
+        return $statement->fetch();
+    }
+
     public function selectChoices(int $id): array
     {
         // prepared request
