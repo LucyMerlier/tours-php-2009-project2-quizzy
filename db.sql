@@ -3,7 +3,7 @@
 --
 
 --
--- Base de donnée tests : 'quizzy'
+-- Test Database : 'quizzy'
 --
 
 --
@@ -11,32 +11,52 @@
 --
 
 --
--- Structure de la table 'question'
+-- Table Structure 'question'
 --
-CREATE TABLE question ( id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, question VARCHAR(200) NOT NULL, theme_id INT, author_id INT);
+CREATE TABLE question ( id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, question VARCHAR(200) NOT NULL, theme_id INT DEFAULT 1, author_id INT DEFAULT 1);
 
 --
--- Structure de la table 'choice'
+-- Table Structure 'choice'
 --
 CREATE TABLE choice ( id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, answer VARCHAR(50) NOT NULL, validity BOOL NOT NULL, question_id INT);
 
 --
--- Structure de la table 'author'
+-- Table Structure 'author'
 --
 CREATE TABLE author ( id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, name VARCHAR(100) NOT NULL, password VARCHAR(255) NOT NULL);
 
 --
--- Structure de la table 'theme'
+-- Table Structure 'theme'
 --
 CREATE TABLE theme ( id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, title VARCHAR(20) NOT NULL);
 
 --
--- Ajout de foreign key pour lier 'question' et 'choice'
+-- Add foreign key to link 'question' and 'choice'
 --
 ALTER TABLE choice ADD CONSTRAINT fk_choice_question FOREIGN KEY (question_id) REFERENCES question(id) ON DELETE CASCADE;
 
 --
--- Contenu de base de la table 'question' pour les tests
+-- Add foreign key to link 'author' and 'question'
+--
+ALTER TABLE choice ADD CONSTRAINT fk_question_author FOREIGN KEY (author_id) REFERENCES author(id);
+
+--
+-- Add foreign key to link 'theme' and 'question'
+--
+ALTER TABLE choice ADD CONSTRAINT fk_question_theme FOREIGN KEY (theme_id) REFERENCES theme(id);
+
+--
+-- Table 'theme' : test content
+--
+INSERT INTO theme (title) VALUES ("Culture Gé");
+
+--
+-- Table 'author' : test content
+--
+INSERT INTO author (name , password) VALUES ("Quizzy" , "Quizzy");
+
+--
+-- Table 'question' : test content
 --
 INSERT INTO question (question) VALUES ("Les chaussettes de l'archiduchesse sont-elles sèches?");
 
@@ -47,7 +67,7 @@ INSERT INTO question (question) VALUES ("0+0=?");
 INSERT INTO question (question) VALUES ("Quelle est la capitale du Venezuela?");
 
 --
--- Contenu de base de la table 'choice' pour les tests
+-- Table 'choice' : test content
 --
 INSERT INTO choice (answer, validity, question_id) VALUES ("Oui" , TRUE , 1);
 
