@@ -7,7 +7,7 @@ This repository is a simple PHP MVC structure from scratch.
 It uses some cool vendors/libraries such as Twig and Grumphp.
 For this one, just a simple example where users can choose one of their databases and see tables in it.
 
-This simple MVC structure serves as a basis for a "quizz" type of web application called "Quizzy" that will propose an infinite flow of random questions to the user. This application is still in a very early stage of developpment. You can now go to localhost:8000/Question/index to find an early draft of Quizzy's home page. Here, you will be able to display a random question and its possible choices each time you refresh the page. You can't answer the questions or add you own yet, but we're doing our best to bring those functionalities to life as fast as possible!
+This simple MVC structure serves as a basis for a "quizz" type of web application called "Quizzy" that will propose an infinite flow of random questions to the user. This application is still in a very early stage of developpment. From Quizzy's home page, you will be able to display a random question and its possible choices each time you refresh the page. You can't answer the questions or add you own yet, but we're doing our best to bring those functionalities to life as fast as possible!
 
 
 ### Check on Travis
