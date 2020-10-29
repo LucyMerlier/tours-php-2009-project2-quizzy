@@ -57,15 +57,17 @@ class QuestionManager extends AbstractManager
             // prepared request
             $statement = $this->pdo->prepare("SELECT answer , choice.id , choice.validity FROM $this->table JOIN choice
             WHERE question_id=:id AND question.id=:id ORDER BY choice.id");
-            if ($statement->bindValue('id', $id, \PDO::PARAM_INT) === false) {
-                return [];
-            }
             $statement->bindValue('id', $id, \PDO::PARAM_INT);
-            if ($statement->execute() === false) {
-                return [];
-            }
             $statement->execute();
         } catch (\Exception $e) {
+            return [];
+        }
+
+        if ($statement->bindValue('id', $id, \PDO::PARAM_INT) === false) {
+            return [];
+        }
+
+        if ($statement->execute() === false) {
             return [];
         }
 
