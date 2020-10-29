@@ -8,8 +8,8 @@ class QuestionController extends AbstractController
 {
 
     /**
-     * @return string
      * Displays a random question and its possible choices.
+     * @return string
      */
     public function index(): string
     {

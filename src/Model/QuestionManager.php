@@ -16,29 +16,65 @@ class QuestionManager extends AbstractManager
     }
 
     /**
-     * @return array
      * Selects a random question.
+     * If table is empty or does not exist or if we encounter an error, returns an error message.
+     * @return array
      */
     public function selectOneRandom(): array
     {
-        $statement = $this->pdo->query("SELECT * FROM $this->table ORDER BY RAND() LIMIT 1");
+        try {
+            $statement = $this->pdo->query("SELECT * FROM " . self::TABLE . " ORDER BY RAND() LIMIT 1");
+        } catch (\Exception $e) {
+            return ["id" => 0 , "question" => "Je n'ai pas trouvé de question (╥﹏╥) Essaies d'en ajouter une? ^_^"];
+        }
 
-        return $statement->fetch();
+        if ($statement === false) {
+            return ["id" => 0 , "question" => "Je n'ai pas trouvé de question (╥﹏╥) Essaies d'en ajouter une? ^_^"];
+        }
+
+        $result = $statement->fetch();
+
+        if ($result === false) {
+            return ["id" => 0 , "question" => "Je n'ai pas trouvé de question (╥﹏╥) Essaies d'en ajouter une? ^_^"];
+        }
+        return $result;
     }
 
     /**
+     * Selects all the choices linked to a random question.
+     * If table is empty or does not exist or if $id === 0 or if we encounter an error, returns an empty array.
      * @param int $id
      * @return array
-     * Selects all the choices linked to a random question.
      */
     public function selectChoices(int $id): array
     {
-        // prepared request
-        $statement = $this->pdo->prepare("SELECT answer , choice.id FROM $this->table JOIN choice
-        WHERE question_id=:id AND question.id=:id ORDER BY choice.id");
-        $statement->bindValue('id', $id, \PDO::PARAM_INT);
-        $statement->execute();
 
-        return $statement->fetchAll();
+        if ($id === 0) {
+            return [];
+        }
+
+        try {
+            // prepared request
+            $statement = $this->pdo->prepare("SELECT answer , choice.id , choice.validity FROM $this->table JOIN choice
+            WHERE question_id=:id AND question.id=:id ORDER BY choice.id");
+            if ($statement->bindValue('id', $id, \PDO::PARAM_INT) === false) {
+                return [];
+            }
+            $statement->bindValue('id', $id, \PDO::PARAM_INT);
+            if ($statement->execute() === false) {
+                return [];
+            }
+            $statement->execute();
+        } catch (\Exception $e) {
+            return [];
+        }
+
+        $result = $statement->fetchAll();
+
+        if ($result === false) {
+            return [];
+        }
+
+        return $result;
     }
 }
