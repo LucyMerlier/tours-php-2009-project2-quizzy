@@ -1,13 +1,10 @@
+{# This is Quizzy's main page view #}
+
 {% extends "base.html.twig" %}
-
-{% block title %}
-{% endblock %}
-
-{% block stylesheets %}
-{% endblock %}
 
 {% block content %}
 <form>
+    <p class = "error">{{ error }}</p>
     <p class = "question">{{ question.question }}</p>
     {% for choice in choices %}
     <input type = "checkbox" class = "choice" id = "choice{{ choice.id }}">
@@ -15,7 +12,4 @@
     {% endfor %}
 </form>
 {{ parent() }}
-{% endblock %}
-
-{% block scripts %}
 {% endblock %}
