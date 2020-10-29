@@ -13,10 +13,25 @@ class QuestionController extends AbstractController
      */
     public function index(): string
     {
+        $error = "";
         $questionManager = new QuestionManager();
         $question = $questionManager->selectOneRandom();
-        $choices = $questionManager->selectChoices($question["id"]);
+        if (empty($question)) {
+            $error = "Je n'ai pas trouvé de question o(╥﹏╥)o Essaies d'en ajouter une? ^_^";
+        }
 
-        return $this->twig->render('Question/index.html.twig', ['question' => $question , 'choices' => $choices]);
+        if (isset($question["id"])) {
+            $choices = $questionManager->selectChoices($question["id"]);
+        } else {
+            $choices = [];
+        }
+
+
+        return $this->twig->render(
+            'Question/index.html.twig',
+            ['question' => $question ,
+            'choices' => $choices ,
+            'error' => $error]
+        );
     }
 }

@@ -6,6 +6,7 @@ class QuestionManager extends AbstractManager
 {
     
     const TABLE = 'question';
+    const DB_ERROR = "Je n'ai pas trouvé de question (╥﹏╥) Essaies d'en ajouter une? ^_^";
 
     /**
      *  Initializes this class.
@@ -25,17 +26,17 @@ class QuestionManager extends AbstractManager
         try {
             $statement = $this->pdo->query("SELECT * FROM " . self::TABLE . " ORDER BY RAND() LIMIT 1");
         } catch (\Exception $e) {
-            return ["id" => 0 , "question" => "Je n'ai pas trouvé de question (╥﹏╥) Essaies d'en ajouter une? ^_^"];
+            return [];
         }
 
         if ($statement === false) {
-            return ["id" => 0 , "question" => "Je n'ai pas trouvé de question (╥﹏╥) Essaies d'en ajouter une? ^_^"];
+            return [];
         }
 
         $result = $statement->fetch();
 
         if ($result === false) {
-            return ["id" => 0 , "question" => "Je n'ai pas trouvé de question (╥﹏╥) Essaies d'en ajouter une? ^_^"];
+            return [];
         }
         return $result;
     }
@@ -49,7 +50,7 @@ class QuestionManager extends AbstractManager
     public function selectChoices(int $id): array
     {
 
-        if ($id === 0) {
+        if ($id <= 0) {
             return [];
         }
 
