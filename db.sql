@@ -1,8 +1,4 @@
 --
--- DON'T IMPORT YET : this will only serve testing purposes in later developpment stages of Quizzy
---
-
---
 -- Test Database : 'quizzy'
 --
 
