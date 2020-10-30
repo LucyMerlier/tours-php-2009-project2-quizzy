@@ -7,7 +7,7 @@ This repository is a simple PHP MVC structure from scratch.
 It uses some cool vendors/libraries such as Twig and Grumphp.
 For this one, just a simple example where users can choose one of their databases and see tables in it.
 
-This simple MVC structure serves as a basis for a "quizz" type of web application called "Quizzy" that will propose an infinite flow of random questions to the user. This application is still in a very early stage of developpment and none of its functionalities are available yet. You still play with the default test functionalities while you wait for Quizzy to come out!
+This simple MVC structure serves as a basis for a "quizz" type of web application called "Quizzy" that will propose an infinite flow of random questions to the user. This application is still in a very early stage of developpment. From Quizzy's home page, you will be able to display a random question and its possible choices each time you refresh the page. You can't answer the questions or add you own yet, but we're doing our best to bring those functionalities to life as fast as possible!
 
 
 ### Check on Travis
@@ -30,10 +30,11 @@ define('APP_DB_USER', 'your_db_user_wich_is_not_root');
 define('APP_DB_PWD', 'your_db_password');
 ```
 4. Import `simple-mvc.sql` in your SQL server,
-5. You don't need to import `db.sql` yet, it will serve its purpose once the first test version of Quizzy is out.
+5. Import `db.sql` in your SQL server, so you can have access to our 4 test questions and their possible choices,
 6. Run the internal PHP webserver with `php -S localhost:8000 -t public/`. The option `-t` with `public` as parameter means your localhost will target the `/public` folder.
-7. Go to `localhost:8000` with your favorite browser.
-8. From this starter kit, create your own web application.
+7. Go to `localhost:8000` with your favorite browser,
+8. From this starter kit, create your own web application,
+9. OR go to localhost:8000/Question/index to find an early draft of the "Quizzy" application.
 
 ### Windows Users
 
@@ -49,6 +50,7 @@ If you develop on Windows, you should edit you git configuration to change your 
 * Item edit [localhost:8000/item/index/edit/:id](localhost:8000/item/edit/2)
 * Item add [localhost:8000/item/index/add](localhost:8000/item/add)
 * Item deletion [localhost:8000/item/index/delete/:id](localhost:8000/item/delete/2)
+* Quizzy's home page at [localhost:8000/Question/index](localhost:8000/Question/index)
 
 ## How does URL routing work ?
 
