@@ -3,13 +3,20 @@
 {% extends "base.html.twig" %}
 
 {% block content %}
-<form>
+<p id = "winOrFailMessage"></p>
+<form method = "post" id = "questionsAndAnswers">
     <p class = "error">{{ error }}</p>
     <p class = "question">{{ question.question }}</p>
     {% for choice in choices %}
-    <input type = "checkbox" class = "choice" id = "choice{{ choice.id }}">
-    <label for = "choice{{ choice.id }}">{{ choice.answer }}</label>
+    <div class = "choiceBox" id = "choiceBox{{ choice.id }}">
+        <input type = "checkbox" class = "choice" id = "choice{{ choice.id }}" value = "{{choice.validity}}">
+        <label for = "choice{{ choice.id }}" class = "choice">{{ choice.answer }}</label>
+    </div>
     {% endfor %}
 </form>
 {{ parent() }}
+{% endblock %}
+
+{% block scripts %}
+<script src = "/assets/scripts/indexScripts.js"></script>
 {% endblock %}

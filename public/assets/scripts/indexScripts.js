@@ -5,7 +5,6 @@
  */
 function winOrFail(validity) {
     document.querySelector("#questionsAndAnswers").style.display = "none";
-    document.querySelector("#passButton").innerHTML = "SUIVANT!";
     if (validity == 1) {
         document.querySelector("#winOrFailMessage").innerHTML = "Gagné!";
     } else if (validity == 0) {
