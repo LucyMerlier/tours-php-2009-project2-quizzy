@@ -4,7 +4,9 @@
 
 {% block content %}
 <form>
+    {% for error in errors %}
     <p class = "error">{{ error }}</p>
+    {% endfor %}
     <p class = "question">{{ question.question }}</p>
     {% for choice in choices %}
     <input type = "checkbox" class = "choice" id = "choice{{ choice.id }}">
