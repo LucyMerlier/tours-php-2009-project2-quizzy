@@ -6,7 +6,6 @@ class QuestionManager extends AbstractManager
 {
     
     const TABLE = 'question';
-    const DB_ERROR = "Je n'ai pas trouvé de question (╥﹏╥) Essaies d'en ajouter une? ^_^";
 
     /**
      *  Initializes this class.
