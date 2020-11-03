@@ -6,6 +6,7 @@
 <p id = "winOrFailMessage"></p>
 <form method = "post" id = "questionsAndAnswers">
     <p class = "error">{{ error }}</p>
+    {% endfor %}
     <p class = "question">{{ question.question }}</p>
     {% for choice in choices %}
     <div class = "choiceBox" id = "choiceBox{{ choice.id }}">
@@ -14,6 +15,7 @@
     </div>
     {% endfor %}
 </form>
+<a href = "index" id = "passButton">¯\_(ツ)_/¯ Passer ¯\_(ツ)_/¯</a>
 {{ parent() }}
 {% endblock %}
 
