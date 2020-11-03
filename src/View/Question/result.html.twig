@@ -1,0 +1,8 @@
+{# This is the page that displays if you won or failed answering the question #}
+
+{% extends "base.html.twig" %}
+
+{% block content %}
+<p id = "winOrFailMessage">{{ message }}</p>
+<a href = "index" id = "passButton">Question suivante</a>
+{% endblock %}
