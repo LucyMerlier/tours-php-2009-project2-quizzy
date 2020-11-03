@@ -3,22 +3,19 @@
 {% extends "base.html.twig" %}
 
 {% block content %}
-<p id = "winOrFailMessage"></p>
-<form method = "post" id = "questionsAndAnswers">
+<form method = "post" id = "questionsAndAnswers" action = "result">
     <p class = "error">{{ error }}</p>
-    {% endfor %}
     <p class = "question">{{ question.question }}</p>
     {% for choice in choices %}
     <div class = "choiceBox" id = "choiceBox{{ choice.id }}">
-        <input type = "checkbox" class = "choice" id = "choice{{ choice.id }}" value = "{{choice.validity}}">
+        {# For now, you only need to select one correct choice to "win" #}
+        {# You are redirected to the result page as soon as you select an answer #}
+        <input name = "choice" value = "{{ choice.id }}" type = "checkbox" class = "choice" 
+        id = "choice{{ choice.id }}" onchange="this.form.submit()">
         <label for = "choice{{ choice.id }}" class = "choice">{{ choice.answer }}</label>
     </div>
     {% endfor %}
 </form>
 <a href = "index" id = "passButton">¯\_(ツ)_/¯ Passer ¯\_(ツ)_/¯</a>
 {{ parent() }}
-{% endblock %}
-
-{% block scripts %}
-<script src = "/assets/scripts/indexScripts.js"></script>
 {% endblock %}
