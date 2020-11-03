@@ -3,7 +3,14 @@
 namespace App\Controller;
 
 use App\Model\QuestionManager;
+use App\Model\ChoiceManager;
 
+/**
+ * Class QuestionController
+ * Uses QuestionManager and ChoiceManager
+ * Creates index and result views that relate to the main functionality of the site :
+ * seeing and answering random questions.
+ */
 class QuestionController extends AbstractController
 {
 
@@ -35,6 +42,37 @@ class QuestionController extends AbstractController
             ['question' => $question ,
             'choices' => $choices ,
             'errors' => $errors]
+        );
+    }
+
+    /**
+     * Displays a message that tells if the user answered the question correctly.
+     * Redirects to index if $_POST['choice'] does not exist or is empty.
+     * @return string
+     */
+    public function result(): string
+    {
+        $message = "";
+        $choiceManager = new ChoiceManager();
+
+        if (isset($_POST['choice'])) {
+            $id = $_POST['choice'];
+
+            // Select the choice we want by id using $_POST
+            $choice = $choiceManager->selectOneById($id);
+            if ($choice['validity'] == 1) {
+                $message = "Gagné !";
+            } else {
+                $message = "Perdu !";
+            }
+        } else {
+            // Redirection to index
+            header("Location: index");
+        }
+        
+        return $this->twig->render(
+            'Question/result.html.twig',
+            ['message' => $message]
         );
     }
 }
