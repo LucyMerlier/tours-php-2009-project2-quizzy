@@ -55,15 +55,20 @@ class QuestionController extends AbstractController
         $message = "";
         $choiceManager = new ChoiceManager();
 
-        if (isset($_POST['choice'])) {
+        // Check if choice exists and is an int !==0
+        if (isset($_POST['choice'])  && intval($_POST['choice']) !== 0) {
             $id = $_POST['choice'];
+            $allChoices = $choiceManager->selectAllIds();
 
-            // Select the choice we want by id using $_POST
-            $choice = $choiceManager->selectOneById($id);
-            if ($choice['validity'] == 1) {
-                $message = "Gagné !";
-            } else {
-                $message = "Perdu !";
+            // Check if choice id exists in database
+            if (in_array($id, $allChoices)) {
+                // Select the choice we want by id using $_POST
+                $choice = $choiceManager->selectOneById($id);
+                if ($choice['validity'] == 1) {
+                    $message = "Gagné !";
+                } else {
+                    $message = "Perdu !";
+                }
             }
         } else {
             // Redirection to index
