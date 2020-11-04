@@ -17,4 +17,18 @@ class ChoiceManager extends AbstractManager
     {
         parent::__construct(self::TABLE);
     }
+
+    /**
+     * Get all ids from choice table.
+     * @return array
+     */
+    public function selectAllIds(): array
+    {
+        $result = [];
+        $arrays = $this->pdo->query('SELECT id FROM ' . self::TABLE)->fetchAll();
+        foreach ($arrays as $array) {
+            $result[] = $array['id'];
+        }
+        return $result;
+    }
 }
