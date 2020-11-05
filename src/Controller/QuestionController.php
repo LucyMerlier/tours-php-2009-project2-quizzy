@@ -55,7 +55,12 @@ class QuestionController extends AbstractController
         $message = "";
         $choiceManager = new ChoiceManager();
 
-        // Check if id is an int and > 0 and displays an error message if id not found in choice table.
+        /**
+         * Check if id is an int and > 0 and displays an error message if id not found in choice table.
+         * The try/catch catches the exception produced when you try to access a "validity" field that does not exist,
+         * so it checks if the id exists in the choice table AND if it has a "validity" field at once.
+         * (because you can not access the "validity" field of a line that does not exist)
+         */
         try {
             $id = filter_input(INPUT_POST, 'choice', FILTER_VALIDATE_INT, ["options" => ["min_range" => 1]]);
             if ($id) {
@@ -68,6 +73,7 @@ class QuestionController extends AbstractController
             } else {
                 // Redirection to index
                 header("Location: index");
+                return "";
             }
         } catch (\Exception $e) {
             $message = "Une erreur est survenue :(";
