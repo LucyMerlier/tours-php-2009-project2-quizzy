@@ -55,24 +55,22 @@ class QuestionController extends AbstractController
         $message = "";
         $choiceManager = new ChoiceManager();
 
-        // Check if choice exists and is an int !==0
-        if (isset($_POST['choice'])  && intval($_POST['choice']) !== 0) {
-            $id = $_POST['choice'];
-            $allChoices = $choiceManager->selectAllIds();
-
-            // Check if choice id exists in database
-            if (in_array($id, $allChoices)) {
-                // Select the choice we want by id using $_POST
+        // Check if id is an int and > 0 and displays an error message if id not found in choice table.
+        try {
+            $id = filter_input(INPUT_POST, 'choice', FILTER_VALIDATE_INT, ["options" => ["min_range" => 1]]);
+            if ($id) {
                 $choice = $choiceManager->selectOneById($id);
                 if ($choice['validity'] == 1) {
                     $message = "Gagné !";
                 } else {
                     $message = "Perdu !";
                 }
+            } else {
+                // Redirection to index
+                header("Location: index");
             }
-        } else {
-            // Redirection to index
-            header("Location: index");
+        } catch (\Exception $e) {
+            $message = "Une erreur est survenue :(";
         }
         
         return $this->twig->render(
