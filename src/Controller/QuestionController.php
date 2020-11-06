@@ -81,7 +81,7 @@ class QuestionController extends AbstractController
 
         // Auto-redirection to next question after 2 seconds
         header("refresh:2;url=index");
-        
+
         return $this->twig->render(
             'Question/result.html.twig',
             ['message' => $message]
