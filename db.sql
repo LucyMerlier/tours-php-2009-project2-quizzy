@@ -158,7 +158,7 @@ INSERT INTO choice (answer, validity, question_id) VALUES ("Uranium" , FALSE , 9
 
 INSERT INTO choice (answer, validity, question_id) VALUES ("Bronze" , FALSE , 9);
 
-INSERT INTO choice (answer, validity, question_id) VALUES ("Vibranium" , TRUE , 9);
+INSERT INTO choice (answer, validity, question_id) VALUES ("Vibranium" , FALSE , 9);
 
 INSERT INTO choice (answer, validity, question_id) VALUES ("Hydrogène" , FALSE , 9);
 
