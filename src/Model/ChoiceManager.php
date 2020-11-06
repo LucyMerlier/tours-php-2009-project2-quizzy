@@ -8,7 +8,7 @@ namespace App\Model;
  */
 class ChoiceManager extends AbstractManager
 {
-    const TABLE = 'choice';
+    public const TABLE = 'choice';
 
     /**
      *  Initializes this class.
