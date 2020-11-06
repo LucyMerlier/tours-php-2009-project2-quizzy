@@ -78,7 +78,6 @@ class QuestionController extends AbstractController
         } catch (\Exception $e) {
             $message = "Une erreur est survenue :(";
         }
-        
         return $this->twig->render(
             'Question/result.html.twig',
             ['message' => $message]
