@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: sylvain
@@ -17,7 +18,7 @@ class ItemManager extends AbstractManager
     /**
      *
      */
-    const TABLE = 'item';
+    public const TABLE = 'item';
 
     /**
      *  Initializes this class.
@@ -41,6 +42,7 @@ class ItemManager extends AbstractManager
         if ($statement->execute()) {
             return (int)$this->pdo->lastInsertId();
         }
+        return -1;
     }
 
 
@@ -60,7 +62,7 @@ class ItemManager extends AbstractManager
      * @param array $item
      * @return bool
      */
-    public function update(array $item):bool
+    public function update(array $item): bool
     {
 
         // prepared request

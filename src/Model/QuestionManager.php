@@ -4,8 +4,8 @@ namespace App\Model;
 
 class QuestionManager extends AbstractManager
 {
-    
-    const TABLE = 'question';
+
+    public const TABLE = 'question';
 
     /**
      *  Initializes this class.
