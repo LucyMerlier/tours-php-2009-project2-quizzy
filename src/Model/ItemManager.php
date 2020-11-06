@@ -19,6 +19,7 @@ class ItemManager extends AbstractManager
      *
      */
     public const TABLE = 'item';
+    public const DATABASE_ERROR = -1;
 
     /**
      *  Initializes this class.
@@ -42,7 +43,7 @@ class ItemManager extends AbstractManager
         if ($statement->execute()) {
             return (int)$this->pdo->lastInsertId();
         }
-        return -1;
+        return -self::DATABASE_ERROR;
     }
 
 
