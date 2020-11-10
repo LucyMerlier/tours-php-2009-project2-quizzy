@@ -10,6 +10,7 @@ class QuestionManager extends AbstractManager
 {
 
     public const TABLE = 'question';
+    public const DATABASE_ERROR = -1;
 
     /**
      *  Initializes this class.
@@ -80,7 +81,18 @@ class QuestionManager extends AbstractManager
         if ($result === false) {
             return [];
         }
-
         return $result;
+    }
+
+    public function addQuestion(string $userQuestion): int
+    {
+        // prepared request
+        $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " (`question`) VALUES (:userQuestion)");
+        $statement->bindValue('userQuestion', $userQuestion, \PDO::PARAM_STR);
+
+        if ($statement->execute()) {
+            return (int)$this->pdo->lastInsertId();
+        }
+        return -self::DATABASE_ERROR;
     }
 }
