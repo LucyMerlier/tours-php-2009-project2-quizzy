@@ -1,0 +1,18 @@
+{# This is Quizzy's page that displays a form that allows users to set the choices validity #}
+
+{% extends "base.html.twig" %}
+
+{% block content %}
+<p>Quelle(s) sera(seront) la(les) bonne(s) réponse(s) ? :</p>
+<form method = "post" action = "afterSubmit">
+{{ dump(userChoices) }}
+{% for i in 0.. (numberOfChoices - 1) %}
+    <label for = "choiceValidity{{i}}">{{ userChoices.i.answer }}</label>
+    <select name = "choiceValidity{{i}}" id = "choiceValidity{{i}}">
+        <option value = "1">Bonne réponse ! :D</option>
+        <option value = "0">Mauvaise réponse ! :(</option>
+    </select>
+{% endfor %}
+    <button>Confirmer ?</button>
+</form>
+{% endblock %}
