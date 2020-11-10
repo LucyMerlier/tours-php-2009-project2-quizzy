@@ -60,6 +60,8 @@ class AddFormController extends AbstractController
             header("Location: ../question/index");
         }
 
+        }
+
         $increment = 0;
         foreach ($_POST as $choiceValidity) {
             $_SESSION['userChoices'][$increment]['validity'] = $choiceValidity;
