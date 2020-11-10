@@ -1,0 +1,14 @@
+{# This is Quizzy's page that displays a form that allows users to add their choices #}
+
+{% extends "base.html.twig" %}
+
+{% block content %}
+<p id = "question">{{ userQuestion }}</p>
+<p>Ecris tes choix ici :</p>
+<form method = "post" action = "setValidity">
+{% for i in 1.. numberOfChoices %}
+    <textarea id = "userChoice{{i}}" name = "userChoice{{i}}"></textarea>
+{% endfor %}
+<button>Confirme tes choix !</button>
+</form>
+{% endblock %}
