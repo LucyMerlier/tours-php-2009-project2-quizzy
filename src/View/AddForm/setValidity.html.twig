@@ -3,9 +3,9 @@
 {% extends "base.html.twig" %}
 
 {% block content %}
+<p>{{ error }}</p>
 <p>Quelle(s) sera(seront) la(les) bonne(s) réponse(s) ? :</p>
 <form method = "post" action = "afterSubmit">
-{{ dump(userChoices) }}
 {% for i in 0.. (numberOfChoices - 1) %}
     <label for = "choiceValidity{{i}}">{{ userChoices.i.answer }}</label>
     <select name = "choiceValidity{{i}}" id = "choiceValidity{{i}}">

@@ -3,9 +3,10 @@
 {% extends "base.html.twig" %}
 
 {% block content %}
+<p>{{ error }}</p>
 <form method = "post" action = "addChoices">
     <label for = "userQuestion" >Ecris ta question ici :</label>
-    <textarea id = "userQuestion" name = "userQuestion" maxlength = "200"></textarea>
+    <textarea id = "userQuestion" name = "userQuestion"></textarea>
     <label for = "numberOfChoices">Combien de choix veux-tu ?</label>
     <select name = "numberOfChoices" id = "numberOfChoices">
         <option value = "2">2</option>

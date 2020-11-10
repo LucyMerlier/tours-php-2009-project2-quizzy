@@ -4,6 +4,7 @@
 
 {% block content %}
 <p id = "question">{{ userQuestion }}</p>
+<p>{{ error }}</p>
 <p>Ecris tes choix ici :</p>
 <form method = "post" action = "setValidity">
 {% for i in 1.. numberOfChoices %}
