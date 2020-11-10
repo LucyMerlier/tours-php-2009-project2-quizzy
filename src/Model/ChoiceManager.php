@@ -19,6 +19,12 @@ class ChoiceManager extends AbstractManager
         parent::__construct(self::TABLE);
     }
 
+    /**
+     * Links choice and question id then inserts choice in DB and returns choice id
+     * @param array $userChoice
+     * @param int $questionId
+     * @return int
+     */
     public function addChoice(array $userChoice, int $questionId): int
     {
         // prepared request

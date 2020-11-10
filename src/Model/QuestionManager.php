@@ -84,6 +84,11 @@ class QuestionManager extends AbstractManager
         return $result;
     }
 
+    /**
+     * Inserts question into DB and returns question id
+     * @param string $userQuestion
+     * @return int
+     */
     public function addQuestion(string $userQuestion): int
     {
         // prepared request
