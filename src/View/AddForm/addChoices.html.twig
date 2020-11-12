@@ -5,7 +5,7 @@
 {% block content %}
 <p id = "question">{{ userQuestion }}</p>
 <p>{{ error }}</p>
-<p>Ecris tes choix ici :</p>
+<p>Ecris tes choix ici (entre 1 et 100 charactères) :</p>
 <form method = "post" action = "setValidity">
 {% for i in 1.. numberOfChoices %}
     <textarea id = "userChoice{{i}}" name = "userChoice{{i}}"></textarea>

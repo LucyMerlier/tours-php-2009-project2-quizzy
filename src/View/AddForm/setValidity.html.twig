@@ -4,7 +4,7 @@
 
 {% block content %}
 <p>{{ error }}</p>
-<p>Quelle(s) sera(seront) la(les) bonne(s) réponse(s) ? :</p>
+<p>Quelle(s) sera(seront) la(les) bonne(s) réponse(s) ? (Il te faut au minimum 1 bonne réponse)</p>
 <form method = "post" action = "afterSubmit">
 {% for i in 0.. numberOfChoices - 1 %}
     <label for = "choiceValidity{{i}}">{{ userChoices[i]['answer'] }}</label>
