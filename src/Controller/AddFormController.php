@@ -91,8 +91,13 @@ class AddFormController extends AbstractController
         }
 
         // Put question and number of choices into $_SESSION
-        $_SESSION['userQuestion'] = $userQuestion;
-        $_SESSION['numberOfChoices'] = $numberOfChoices;
+        if (!isset($_SESSION['userQuestion'])) {
+            $_SESSION['userQuestion'] = $userQuestion;
+        }
+
+        if (!isset($_SESSION['numberOfChoices'])) {
+            $_SESSION['numberOfChoices'] = $numberOfChoices;
+        }
 
         return $this->twig->render(
             'AddForm/addChoices.html.twig',
@@ -146,8 +151,10 @@ class AddFormController extends AbstractController
         }
 
         // Put choices into $_SESSION
-        foreach ($userChoices as $userChoice) {
-            $_SESSION['userChoices'][]['answer'] = $userChoice;
+        if (!isset($_SESSION['userChoices'])) {
+            foreach ($userChoices as $userChoice) {
+                $_SESSION['userChoices'][]['answer'] = $userChoice;
+            }
         }
 
         return $this->twig->render(
@@ -196,7 +203,9 @@ class AddFormController extends AbstractController
         // Put validities into $_SESSION
         $increment = 0;
         foreach ($choicesValidity as $choiceValidity) {
-            $_SESSION['userChoices'][$increment]['validity'] = $choiceValidity;
+            if (!isset($_SESSION['userChoices'][$increment]['validity'])) {
+                $_SESSION['userChoices'][$increment]['validity'] = $choiceValidity;
+            }
             $increment++;
         }
 
