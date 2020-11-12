@@ -2,10 +2,14 @@
 
 namespace App\Model;
 
+/**
+ * Class QuestionManager
+ * Is used to communicate with the question table in the database
+ */
 class QuestionManager extends AbstractManager
 {
-    
-    const TABLE = 'question';
+
+    public const TABLE = 'question';
 
     /**
      *  Initializes this class.
