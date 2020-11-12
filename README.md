@@ -7,7 +7,7 @@ This repository is a simple PHP MVC structure from scratch.
 It uses some cool vendors/libraries such as Twig and Grumphp.
 For this one, just a simple example where users can choose one of their databases and see tables in it.
 
-This simple MVC structure serves as a basis for a "quizz" type of web application called "Quizzy" that will propose an infinite flow of random questions to the user. This application is still in a very early stage of developpment. From Quizzy's home page, you will be able to display a random question and its possible choices each time you refresh the page. You can click on one of the choices, and you will then be redirected to a page that tells you if the choice you selected is correct or not. For now, you only need to select one of the possible correct choices to win. You can't add you own questions yet, but we're doing our best to bring all the functionalities to life as fast as possible!
+This simple MVC structure serves as a basis for a "quizz" type of web application called "Quizzy" that will propose an infinite flow of random questions to the user. This application is still in an early stage of developpment. From Quizzy's home page, you will be able to display a random question and its possible choices each time you refresh the page. You can click on one of the choices, and you will then be redirected to a page that tells you if the choice you selected is correct or not. For now, you only need to select one of the possible correct choices to win. You can add your own questions and the choices associated with them by clicking the "AJOUTE LES TIENNES" link at the bottom of the page, and following the instructions step by step.
 
 
 ### Check on Travis
@@ -51,7 +51,11 @@ If you develop on Windows, you should edit you git configuration to change your 
 * Item add [localhost:8000/item/index/add](localhost:8000/item/add)
 * Item deletion [localhost:8000/item/index/delete/:id](localhost:8000/item/delete/2)
 * Quizzy's home page at [localhost:8000/question/index](localhost:8000/question/index)
-* Quizzy's "result" page, that tells you if you won or not (can only be accessed after answering a question, direct url input will redirect you to Home page) [localhost:8000/question/result](localhost:8000/question/result)
+* Quizzy's "result" page, that tells you if you won or not (can only be accessed after answering a question) [localhost:8000/question/result](localhost:8000/question/result)
+* Quizzy's first part of the form that lets you add your own question [localhost:8000/addForm/addQuestion](localhost:8000/addForm/addQuestion)
+* Quizzy's second part of the form that lets you add the associated choices (can only be accessed after adding a question) [localhost:8000/addForm/addChoices](localhost:8000/addForm/addChoices)
+* Quizzy's third part of the form that lets you set the validity of each choice (can only be accessed after adding choices) [localhost:8000/addForm/setValidity](localhost:8000/addForm/setValidity)
+* Quizzy's final page of the form that tells you your question has been added to the database (can only be accessed after setting the validity of each choice) [localhost:8000/addForm/afterSubmit](localhost:8000/addForm/afterSubmit)
 
 ## How does URL routing work ?
 
