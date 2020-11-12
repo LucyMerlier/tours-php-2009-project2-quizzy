@@ -221,8 +221,10 @@ class AddFormController extends AbstractController
             $choiceManager->addChoice($userChoice, $questionId);
         }
 
+        // Reset session
         unset($_SESSION["userChoices"]);
         unset($_SESSION["userQuestion"]);
+        unset($_SESSION["numberOfChoices"]);
 
         return $this->twig->render('AddForm/afterSubmit.html.twig');
     }
