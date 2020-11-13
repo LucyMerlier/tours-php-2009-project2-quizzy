@@ -33,7 +33,7 @@ class QuestionController extends AbstractController
             $choices = [];
         }
 
-        if (empty($choices)) {
+        if (empty($choices) && !isset($errors[0])) {
             $errors[] = "Je n'ai pas trouvé de choix valide :(";
         }
 
@@ -63,7 +63,7 @@ class QuestionController extends AbstractController
          */
         try {
             $id = filter_input(INPUT_POST, 'choice', FILTER_VALIDATE_INT, ["options" => ["min_range" => 1]]);
-            if ($id !== false) {
+            if ($id !== false && $id !== null) {
                 $choice = $choiceManager->selectOneById($id);
                 if ($choice['validity'] == 1) {
                     $message = "Gagné !";
