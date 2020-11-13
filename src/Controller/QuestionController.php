@@ -33,7 +33,7 @@ class QuestionController extends AbstractController
             $choices = [];
         }
 
-        if (empty($choices)) {
+        if (empty($choices) && !isset($errors[0])) {
             $errors[] = "Je n'ai pas trouvé de choix valide :(";
         }
 
