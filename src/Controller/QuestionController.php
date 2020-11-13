@@ -63,7 +63,7 @@ class QuestionController extends AbstractController
          */
         try {
             $id = filter_input(INPUT_POST, 'choice', FILTER_VALIDATE_INT, ["options" => ["min_range" => 1]]);
-            if ($id) {
+            if ($id !== false && $id !== null) {
                 $choice = $choiceManager->selectOneById($id);
                 if ($choice['validity'] == 1) {
                     $message = "Gagné !";
