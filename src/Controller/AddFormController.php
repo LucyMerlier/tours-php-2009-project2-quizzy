@@ -61,7 +61,7 @@ class AddFormController extends AbstractController
         // Check if question isn't too long
         if (strlen($userQuestion) > self::QUESTION_MAX_LENGTH) {
             $error = "Ta question est trop longue! Elle doit faire maximum "
-            . self::QUESTION_MAX_LENGTH . " charactères.";
+            . self::QUESTION_MAX_LENGTH . " caractères.";
             return $this->twig->render(
                 'AddForm/addQuestion.html.twig',
                 ['error' => $error]
@@ -129,7 +129,7 @@ class AddFormController extends AbstractController
         foreach ($userChoices as $userChoice) {
             if (strlen($userChoice) > self::CHOICE_MAX_LENGTH) {
                 $error = "L'un de tes choix est trop long! Ils doivent faire maximum "
-                . self::CHOICE_MAX_LENGTH . " charactères.";
+                . self::CHOICE_MAX_LENGTH . " caractères.";
                 return $this->twig->render(
                     'AddForm/addChoices.html.twig',
                     ['userQuestion' => $_SESSION["userQuestion"] ,
@@ -140,7 +140,7 @@ class AddFormController extends AbstractController
 
             if (strlen($userChoice) < self::CHOICE_MIN_LENGTH) {
                 $error = "L'un de tes choix est trop court! Ils doivent faire minimum "
-                . self::CHOICE_MIN_LENGTH . " charactère.";
+                . self::CHOICE_MIN_LENGTH . " caractère.";
                 return $this->twig->render(
                     'AddForm/addChoices.html.twig',
                     ['userQuestion' => $_SESSION["userQuestion"] ,

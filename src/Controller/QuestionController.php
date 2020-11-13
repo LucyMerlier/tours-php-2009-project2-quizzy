@@ -24,7 +24,7 @@ class QuestionController extends AbstractController
         $questionManager = new QuestionManager();
         $question = $questionManager->selectOneRandom();
         if (empty($question)) {
-            $errors[] = "Je n'ai pas trouvé de question o(╥﹏╥)o Essaies d'en ajouter une? ^_^";
+            $errors[] = "Je n'ai pas trouvé de question o(╥﹏╥)o Essaie d'en ajouter une? ^_^";
         }
 
         if (isset($question["id"])) {
