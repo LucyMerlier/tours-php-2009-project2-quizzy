@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Model\ChoiceManager;
 use App\Model\QuestionManager;
+use App\Model\ChoiceValidator;
 
 /**
  * Class ChoicesController
@@ -31,8 +32,8 @@ class ChoicesController extends SessionController
 
         if (isset($_POST['userChoices'])) {
             // Checks on userChoices
-            $choiceManager = new ChoiceManager();
-            $errors = $choiceManager->choicesVerifications($_POST['userChoices']);
+            $choiceValidator = new ChoiceValidator();
+            $errors = $choiceValidator->choicesVerifications($_POST['userChoices']);
 
             // Display errors if there are any
             if (!empty($errors)) {
@@ -42,11 +43,6 @@ class ChoicesController extends SessionController
                     'numberOfChoices' => $_SESSION['numberOfChoices'] ,
                     'errors' => $errors]
                 );
-            }
-
-            // Put choices into $_SESSION
-            if (isset($_SESSION['userChoices'])) {
-                unset($_SESSION['userChoices']);
             }
 
             $_SESSION['userChoices'] = $_POST['userChoices'];

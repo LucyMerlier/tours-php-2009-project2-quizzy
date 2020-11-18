@@ -150,16 +150,7 @@ class QuestionController extends SessionController
             }
 
             // Put question and number of choices into $_SESSION
-            if (isset($_SESSION['userQuestion'])) {
-                unset($_SESSION['userQuestion']);
-            }
-
             $_SESSION['userQuestion'] = $userQuestion;
-
-            if (isset($_SESSION['numberOfChoices'])) {
-                unset($_SESSION['numberOfChoices']);
-            }
-
             $_SESSION['numberOfChoices'] = $numberOfChoices;
 
             // Redirect to page to add choices
