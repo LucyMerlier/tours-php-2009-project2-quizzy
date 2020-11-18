@@ -79,7 +79,7 @@ class QuestionController extends SessionController
                 }
             } else {
                 // Redirection to index
-                header("Location: index");
+                header("Location: /");
                 return "";
             }
         } catch (\Exception $e) {
@@ -87,7 +87,7 @@ class QuestionController extends SessionController
         }
 
         // Auto-redirection to next question after 2 seconds
-        header("refresh:2;url=index");
+        header("refresh:2;url=/");
 
         return $this->twig->render(
             'Question/result.html.twig',
