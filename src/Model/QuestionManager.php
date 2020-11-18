@@ -53,7 +53,6 @@ class QuestionManager extends AbstractManager
      */
     public function selectChoices(int $id): array
     {
-
         if ($id <= 0) {
             return [];
         }
@@ -91,13 +90,22 @@ class QuestionManager extends AbstractManager
      */
     public function addQuestion(string $userQuestion): int
     {
-        // prepared request
-        $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " (`question`) VALUES (:userQuestion)");
-        $statement->bindValue('userQuestion', $userQuestion, \PDO::PARAM_STR);
+        try {
+            // prepared request
+            $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " (`question`) VALUES (:userQuestion)");
+            $statement->bindValue('userQuestion', $userQuestion, \PDO::PARAM_STR);
+        } catch (\Exception $e) {
+            return self::DATABASE_ERROR;
+        }
+
+        if ($statement->bindValue('userQuestion', $userQuestion, \PDO::PARAM_STR) === false) {
+            return self::DATABASE_ERROR;
+        }
 
         if ($statement->execute()) {
             return (int)$this->pdo->lastInsertId();
         }
-        return -self::DATABASE_ERROR;
+
+        return self::DATABASE_ERROR;
     }
 }
