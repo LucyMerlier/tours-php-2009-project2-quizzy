@@ -30,6 +30,7 @@ class ChoicesController extends SessionController
         $errors = [];
 
         if (isset($_POST['userChoices'])) {
+            // Checks on userChoices
             $choiceManager = new ChoiceManager();
             $errors = $choiceManager->choicesVerifications($_POST['userChoices']);
 
