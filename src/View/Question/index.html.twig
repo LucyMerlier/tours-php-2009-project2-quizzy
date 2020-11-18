@@ -3,7 +3,7 @@
 {% extends "base.html.twig" %}
 
 {% block content %}
-<form method = "post" id = "questionsAndAnswers" action = "result">
+<form method = "post" id = "questionsAndAnswers" action = "question/result">
 {% for error in errors %}
     <p class = "error">{{ error }}</p>
 {% endfor %}
@@ -13,11 +13,11 @@
         {# For now, you only need to select one correct choice to "win" #}
         {# You are redirected to the result page as soon as you select an answer #}
         <input name = "choice" value = "{{ choice.id }}" type = "checkbox" class = "choice" 
-        id = "choice{{ choice.id }}" onchange="this.form.submit()">
+        id = "choice{{ choice.id }}" onchange="this.form.submit()" autocomplete = "off">
         <label for = "choice{{ choice.id }}" class = "choice">{{ choice.answer }}</label>
     </div>
     {% endfor %}
 </form>
-<a class = "button" href = "index" id = "passButton">¯\_(ツ)_/¯ Passer ¯\_(ツ)_/¯</a>
+<a class = "button" href = "" id = "passButton">¯\_(ツ)_/¯ Passer ¯\_(ツ)_/¯</a>
 {{ parent() }}
 {% endblock %}
