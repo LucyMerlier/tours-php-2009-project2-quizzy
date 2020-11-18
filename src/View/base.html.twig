@@ -18,14 +18,16 @@
 
     <body>
         <header>
-            <h1>Quizzy</h1>
+            <h1 class = "title">Quizzy</h1>
         </header>
+        <main>
         {% block content %}
-        <p>Tu n'aimes pas les questions qu'on te propose?<p>
-        <a href = "../question/add">AJOUTE LES TIENNES !!!</a>
+        <p class = "notQuestion">Tu n'aimes pas les questions qu'on te propose?<p>
+        <a class = "add" href = "../question/add">AJOUTE LES TIENNES !!!</a>
         {% endblock %}
+        </main>
         <footer>
-            <ul>
+            <ul class = "footerLinks">
                 <li><a href = "" class = "footerLink">F.A.Q</a></li>
                 <li><a href = "" class = "footerLink">A propos de nous</a></li>
                 <li><a href = "" class = "footerLink">Mentions Légales</a></li>
