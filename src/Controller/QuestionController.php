@@ -44,6 +44,21 @@ class QuestionController extends SessionController
             $errors[] = "Je n'ai pas trouvé de choix valide :(";
         }
 
+        // Initializes last question id for first arrival on site
+        if (!isset($_SESSION['lastQuestionId'])) {
+            $_SESSION['lastQuestionId'] = "0";
+        }
+
+        // Prevents from getting the same question twice in a row
+        // Prevents cheating using back arrow
+        if ($_SESSION['lastQuestionId'] === $question['id']) {
+            header('Location: /');
+            return "";
+        }
+
+        // Updates last question id
+        $_SESSION['lastQuestionId'] = $question['id'];
+
         return $this->twig->render(
             'Question/index.html.twig',
             ['question' => $question ,
@@ -79,7 +94,7 @@ class QuestionController extends SessionController
                 }
             } else {
                 // Redirection to index
-                header("Location: index");
+                header("Location: /");
                 return "";
             }
         } catch (\Exception $e) {
@@ -87,7 +102,7 @@ class QuestionController extends SessionController
         }
 
         // Auto-redirection to next question after 2 seconds
-        header("refresh:2;url=index");
+        header("refresh:2;url=/");
 
         return $this->twig->render(
             'Question/result.html.twig',
