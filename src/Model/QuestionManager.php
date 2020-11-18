@@ -93,12 +93,11 @@ class QuestionManager extends AbstractManager
         try {
             // prepared request
             $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " (`question`) VALUES (:userQuestion)");
-            $statement->bindValue('userQuestion', $userQuestion, \PDO::PARAM_STR);
-        } catch (\Exception $e) {
-            return self::DATABASE_ERROR;
-        }
 
-        if ($statement->bindValue('userQuestion', $userQuestion, \PDO::PARAM_STR) === false) {
+            if ($statement->bindValue('userQuestion', $userQuestion, \PDO::PARAM_STR) === false) {
+                return self::DATABASE_ERROR;
+            }
+        } catch (\Exception $e) {
             return self::DATABASE_ERROR;
         }
 
