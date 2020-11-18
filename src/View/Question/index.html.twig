@@ -13,7 +13,7 @@
         {# For now, you only need to select one correct choice to "win" #}
         {# You are redirected to the result page as soon as you select an answer #}
         <input name = "choice" value = "{{ choice.id }}" type = "checkbox" class = "choice" 
-        id = "choice{{ choice.id }}" onchange="this.form.submit()">
+        id = "choice{{ choice.id }}" onchange="this.form.submit()" autocomplete = "off">
         <label for = "choice{{ choice.id }}" class = "choice">{{ choice.answer }}</label>
     </div>
     {% endfor %}
