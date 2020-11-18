@@ -5,9 +5,8 @@
 This repository is a simple PHP MVC structure from scratch.
 
 It uses some cool vendors/libraries such as Twig and Grumphp.
-For this one, just a simple example where users can choose one of their databases and see tables in it.
 
-This simple MVC structure serves as a basis for a "quizz" type of web application called "Quizzy" that will propose an infinite flow of random questions to the user. This application is still in a very early stage of developpment. From Quizzy's home page, you will be able to display a random question and its possible choices each time you refresh the page. You can click on one of the choices, and you will then be redirected to a page that tells you if the choice you selected is correct or not. For now, you only need to select one of the possible correct choices to win. You can't add you own questions yet, but we're doing our best to bring all the functionalities to life as fast as possible!
+This simple MVC structure serves as a basis for a "quizz" type of web application called "Quizzy" that will propose an infinite flow of random questions to the user. From Quizzy's home page, you will be able to display a random question and its possible choices each time you refresh the page. You can click on one of the choices, and you will then be redirected to a page that tells you if the choice you selected is correct or not. For now, you only need to select one of the possible correct choices to win. You can add your own questions and the choices associated with them by clicking the "AJOUTE LES TIENNES" link at the bottom of the page, and following the instructions step by step.
 
 
 ### Check on Travis
@@ -29,12 +28,10 @@ define('APP_DB_NAME', 'your_db_name');
 define('APP_DB_USER', 'your_db_user_wich_is_not_root');
 define('APP_DB_PWD', 'your_db_password');
 ```
-4. Import `simple-mvc.sql` in your SQL server,
-5. Import `db.sql` in your SQL server, so you can have access to our test questions and their possible choices,
-6. Run the internal PHP webserver with `php -S localhost:8000 -t public/`. The option `-t` with `public` as parameter means your localhost will target the `/public` folder.
-7. Go to `localhost:8000` with your favorite browser,
-8. From this starter kit, create your own web application,
-9. OR go to localhost:8000/question/index to find an early draft of the "Quizzy" application.
+4. Import `db.sql` in your SQL server, so you can have access to our test questions and their possible choices,
+5. Run the internal PHP webserver with `php -S localhost:8000 -t public/`. The option `-t` with `public` as parameter means your localhost will target the `/public` folder.
+6. Go to `localhost:8000` with your favorite browser,
+7. Play with the "Quizzy" application, don't hesitate to add your own questions!
 
 ### Windows Users
 
@@ -44,14 +41,11 @@ If you develop on Windows, you should edit you git configuration to change your 
 
 ## URLs availables
 
-* Home page at [localhost:8000/](localhost:8000/)
-* Items list at [localhost:8000/item/index](localhost:8000/item/index)
-* Item details [localhost:8000/item/index/show/:id](localhost:8000/item/show/2)
-* Item edit [localhost:8000/item/index/edit/:id](localhost:8000/item/edit/2)
-* Item add [localhost:8000/item/index/add](localhost:8000/item/add)
-* Item deletion [localhost:8000/item/index/delete/:id](localhost:8000/item/delete/2)
-* Quizzy's home page at [localhost:8000/question/index](localhost:8000/question/index)
-* Quizzy's "result" page, that tells you if you won or not (can only be accessed after answering a question, direct url input will redirect you to Home page) [localhost:8000/question/result](localhost:8000/question/result)
+* Quizzy's home page at [localhost:8000/](localhost:8000/)
+* Quizzy's "result" page, that tells you if you won or not (can only be accessed after answering a question) [localhost:8000/question/result](localhost:8000/question/result)
+* Quizzy's first part of the form that lets you add your own question [localhost:8000/question/add](localhost:8000/question/add)
+* Quizzy's second part of the form that lets you add the associated choices (can only be accessed after adding a question) [localhost:8000/choices/add](localhost:8000/choices/add)
+* Quizzy's final page of the form that tells you if your question has been successfully added to the database (can only be accessed after completing the previous steps) [localhost:8000/choices/added](localhost:8000/choices/added)
 
 ## How does URL routing work ?
 
