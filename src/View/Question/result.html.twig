@@ -3,6 +3,8 @@
 {% extends "base.html.twig" %}
 
 {% block content %}
-<p id = "winOrFailMessage">{{ message }}</p>
-<a href = "" id = "passButton">Question suivante</a>
+<div class = "result">
+    <p class = "messageResult" id = "winOrFailMessage">{{ message }}</p>
+    <a href = "" id = "passButton">Question suivante</a>
+</div>
 {% endblock %}

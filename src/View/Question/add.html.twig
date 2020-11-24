@@ -3,18 +3,24 @@
 {% extends "base.html.twig" %}
 
 {% block content %}
-<p>{{ error }}</p>
-<form method = "post" action = "">
-    <label for = "userQuestion" >Ecris ta question ici (entre 3 et 200 caractères):</label>
-    <textarea id = "userQuestion" name = "userQuestion"></textarea>
-    <label for = "numberOfChoices">Combien de choix veux-tu ?</label>
-    <select name = "numberOfChoices" id = "numberOfChoices">
-        <option value = "2">2</option>
-        <option value = "3">3</option>
-        <option value = "4">4</option>
-        <option value = "5">5</option>
-        <option value = "6">6</option>
-    </select>
-    <button>Ajoute tes choix !</button>
-</form>
+<div class = "addQuestion">
+    <p class="errors">{{ error }}</p>
+    <form method = "post" action = "">
+        <div class = "userQuestion">
+            <label for = "userQuestion">Ecris ta question ici (entre 3 et 200 caractères):</label><br>
+            <textarea id = "userQuestion" name = "userQuestion" rows="5" cols="40"></textarea>
+        </div>
+        <div class = "userQuestion">
+            <label for = "numberOfChoices">Combien de choix veux-tu ?</label>
+            <select name = "numberOfChoices" id = "numberOfChoices">
+                <option value = "2">2</option>
+                <option value = "3">3</option>
+                <option value = "4">4</option>
+                <option value = "5">5</option>
+                <option value = "6">6</option>
+            </select>
+        </div>
+        <button>Ajoute tes choix !</button>
+    </form>
+</div>
 {% endblock %}
