@@ -18,7 +18,7 @@
 
     <body>
         <header>
-            <h1 class = "title">Quizzy</h1>
+            <h1 class = "title"><a href = "/" class = "titleLink">Quizzy</a></h1>
         </header>
         <main>
         {% block content %}
@@ -28,9 +28,9 @@
         </main>
         <footer>
             <ul class = "footerLinks">
-                <li><a href = "" class = "footerLink">F.A.Q</a></li>
-                <li><a href = "" class = "footerLink">A propos de nous</a></li>
-                <li><a href = "" class = "footerLink">Mentions Légales</a></li>
+                <li class = "left"><a href = "../info/faq" class = "footerLink">F.A.Q</a></li>
+                <li class = "middle"><a href = "../info/about" class = "footerLink">A propos de nous</a></li>
+                <li class = "right"><a href = "../info/legal" class = "footerLink">Mentions Légales</a></li>
             </ul>
         </footer>
         {% block scripts %}
