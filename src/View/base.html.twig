@@ -1,4 +1,4 @@
-{# This is the base layout for the actual project we are developping : Quizzy. #}
+{# This is the base layout for Quizzy. #}
 
 <!DOCTYPE html>
 <html lang = "fr">
@@ -18,17 +18,19 @@
 
     <body>
         <header>
-            <h1>Quizzy</h1>
+            <h1 class = "title"><a href = "/" class = "titleLink">Quizzy</a></h1>
         </header>
+        <main>
         {% block content %}
-        <p>Tu n'aimes pas les questions qu'on te propose?<p>
-        <a href = "../question/add">AJOUTE LES TIENNES !!!</a>
+            <p class = "notQuestion">Tu n'aimes pas les questions qu'on te propose?</p>
+            <a class = "button" href = "../question/add">AJOUTE LES TIENNES !!!</a>
         {% endblock %}
+        </main>
         <footer>
-            <ul>
-                <li><a href = "" class = "footerLink">F.A.Q</a></li>
-                <li><a href = "" class = "footerLink">A propos de nous</a></li>
-                <li><a href = "" class = "footerLink">Mentions Légales</a></li>
+            <ul class = "footerLinks">
+                <li class = "left"><a href = "../info/faq" class = "footerLink">F.A.Q</a></li>
+                <li class = "middle"><a href = "../info/about" class = "footerLink">A propos de nous</a></li>
+                <li class = "right"><a href = "../info/legal" class = "footerLink">Mentions Légales</a></li>
             </ul>
         </footer>
         {% block scripts %}
