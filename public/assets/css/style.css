@@ -20,6 +20,7 @@ body {
     margin-right: auto;
     font-family: 'NerkoOne';
     font-size: 1.2rem;
+    background-color: #B3E5FF;
 }
 
 main {
@@ -52,7 +53,7 @@ main, footer {
 .button {
     font-family: 'NerkoOne';
     align-self: center;
-    width: 80%;
+    width: 100%;
     background-color: white;
     color: black;
     padding: 1em;
