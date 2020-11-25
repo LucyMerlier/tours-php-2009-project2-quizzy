@@ -2,16 +2,20 @@
 
 {% extends "base.html.twig" %}
 
+{% block stylesheets %}
+<link rel = "stylesheet" href = "/assets/css/about.css">
+{% endblock %}
+
 {% block content %}
-<h1>Qui sommes nous?</h1>
-<div>
-    <img src = "" title="Lucy MERLIER">
+<div class = "theDreamTeam">
+    <h2>L'équipe Quizzy :</h2>
+    <img src = "/assets/images/Lu.png" alt="Lucy MERLIER">
     <p>Lucy Merlier</p>
-    <img src = "" title="Florian BOULMÉ">
+    <img src = "/assets/images/Flo.png" alt="Florian BOULMÉ">
     <p>Florian BOULMÉ</p>
-    <img src = "" title="Yusuf CELIK">
+    <img src = "/assets/images/Y.png" alt="Yusuf CELIK">
     <p>Yusuf CELIK</p>
-    <img src = "" title="Maxime BOUET">
+    <img src = "/assets/images/Max.png" alt="Maxime BOUET">
     <p>Maxime BOUET</p>
 </div>
 {% endblock %}

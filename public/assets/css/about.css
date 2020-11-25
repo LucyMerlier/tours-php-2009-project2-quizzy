@@ -1,0 +1,12 @@
+.theDreamTeam {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-self: center;
+    text-align: center;
+}
+
+img {
+    width: 15rem;
+    height: 15rem;
+}

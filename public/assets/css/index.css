@@ -16,6 +16,10 @@
     justify-content: center;
 }
 
+.choice:hover {
+    cursor: pointer;
+}
+
 .choice {
     border: solid 1px;
     background-color: white;
