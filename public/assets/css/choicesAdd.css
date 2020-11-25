@@ -1,0 +1,19 @@
+/* choices/add page stylesheet */
+
+.addChoices {
+    text-align: center;
+}
+
+.userchoices {
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+
+.uservalidity {
+    margin-bottom: 1em;
+}
+
+.buttonChoicesAdd {
+    margin-top: 2em;
+    align-items: end;
+}

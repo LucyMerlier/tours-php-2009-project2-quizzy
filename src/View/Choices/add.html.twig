@@ -2,20 +2,28 @@
 
 {% extends "base.html.twig" %}
 
+{% block stylesheets %}
+<link rel = "stylesheet" href = "/assets/css/choicesAdd.css">
+{% endblock %}
+
 {% block content %}
-<p id = "question">{{ userQuestion }}</p>
-{% for error in errors %}
-    <p>{{ error }}</p>
-{% endfor %}
-<p>Ecris tes choix ici (entre 1 et 100 caractères) :</p>
-<form method = "post" action = "">
-{% for i in 1.. numberOfChoices %}
-    <textarea name = "userChoices[{{i}}][answer]" id = "userChoice{{i}}"></textarea>
-    <select name = "userChoices[{{i}}][validity]" id = "choiceValidity{{i}}">
-        <option value = "1">Bonne réponse ! :D</option>
-        <option value = "0">Mauvaise réponse ! :(</option>
-    </select>
-{% endfor %}
-    <button>Confirme tes choix !</button>
-</form>
+<div class="addChoices">
+    {% for error in errors %}
+        <p class = "errors" >{{ error }}</p>
+    {% endfor %}
+    <p id = "question">{{ userQuestion }}</p>
+    <p>Ecris tes choix ici (entre 1 et 100 caractères) :</p>
+    <form method = "post" action = "">
+    {% for i in 1.. numberOfChoices %}
+        <textarea class = "userchoices" name = "userChoices[{{i}}][answer]" id = "userChoice{{i}}" rows="3" cols="30"></textarea><br>
+        <select class = "uservalidity" name = "userChoices[{{i}}][validity]" id = "choiceValidity{{i}}">
+            <option value = "1">Bonne réponse ! :D</option>
+            <option value = "0">Mauvaise réponse ! :(</option>
+        </select><br>
+    {% endfor %}
+        <div>
+            <button class = "button">Confirme tes choix !</button>
+        </div>
+    </form>
+</div>
 {% endblock %}

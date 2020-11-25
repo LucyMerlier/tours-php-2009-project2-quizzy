@@ -1,0 +1,90 @@
+/* general stylesheet */
+
+@font-face {
+    font-family: 'Crackman';
+    src: url('../fonts/crackman.regular.ttf')
+}
+
+@font-face {
+    font-family: 'NerkoOne';
+    src: url('../fonts/NerkoOne-Regular.ttf')
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'NerkoOne';
+    font-size: 1.2rem;
+    background-color: #B3E5FF;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+main, footer {
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+.title {
+    font-size: 4rem;
+    text-align: center;
+    margin: 0;
+    font-family: 'Crackman';
+}
+
+.titleLink {
+    text-decoration: none;
+    color: black;
+}
+
+.notQuestion {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.button {
+    font-family: 'NerkoOne';
+    align-self: center;
+    width: 100%;
+    background-color: white;
+    color: black;
+    padding: 1em;
+    border: solid 1px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+footer {
+    margin-top: 2em;
+}
+
+.footerLinks {
+    margin: 0;
+    padding: 0;
+    display : flex;
+    justify-content: space-between;
+}
+
+.footerLink {
+    width: 100%;
+}
+
+li {
+    text-align: center;
+    list-style-type: none;
+    width: 100%;
+}
+
+.errors {
+    color: red;
+    text-align: center;
+}
