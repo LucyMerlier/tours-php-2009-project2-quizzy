@@ -1,8 +1,13 @@
 /* index page stylesheet */
 
+#questionsAndAnswers {
+    margin-bottom: 1em;
+}
+
 .question {
     text-align: center;
     word-wrap: break-word;
+    font-size: 1.5rem;
 }
 
 .choiceBox {
@@ -12,9 +17,10 @@
 }
 
 .choice {
+    border: solid 1px;
+    background-color: white;
     padding: 15px 10px 15px 10px;
     text-align: center;
-    background-color: fuchsia;
     border-radius: 10px;
     word-wrap: break-word;
     margin: 5px;

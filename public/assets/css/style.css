@@ -1,8 +1,13 @@
 /* general stylesheet */
 
 @font-face {
-    font-family: '3Dumb';
-    src: url('../fonts/3Dumb.ttf')
+    font-family: 'Crackman';
+    src: url('../fonts/crackman.regular.ttf')
+}
+
+@font-face {
+    font-family: 'NerkoOne';
+    src: url('../fonts/NerkoOne-Regular.ttf')
 }
 
 * {
@@ -13,6 +18,9 @@ body {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+    font-family: 'NerkoOne';
+    font-size: 1.2rem;
+    background-color: #B3E5FF;
 }
 
 main {
@@ -21,13 +29,15 @@ main {
 }
 
 main, footer {
-    margin: 10%;
+    margin-right: 10%;
+    margin-left: 10%;
 }
 
 .title {
-    font-size: 3.5rem;
+    font-size: 4rem;
     text-align: center;
-    font-family: '3Dumb';
+    margin: 0;
+    font-family: 'Crackman';
 }
 
 .titleLink {
@@ -37,21 +47,24 @@ main, footer {
 
 .notQuestion {
     text-align: center;
+    font-size: 1.5rem;
 }
 
 .button {
+    font-family: 'NerkoOne';
     align-self: center;
-    margin-top: 1em;
-}
-
-.button:link {
-    width: 50%;
+    width: 100%;
     background-color: white;
     color: black;
-    padding: 14px;
+    padding: 1em;
     border: solid 1px;
     text-decoration: none;
     text-align: center;
+    font-size: 1.2rem;
+}
+
+footer {
+    margin-top: 2em;
 }
 
 .footerLinks {
