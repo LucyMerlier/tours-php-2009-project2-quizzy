@@ -1,0 +1,10 @@
+/* question/add page stylesheet */
+
+.addQuestion {
+    text-align: center;
+}
+
+.userQuestion, #userQuestion {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}

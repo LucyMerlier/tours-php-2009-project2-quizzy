@@ -2,22 +2,26 @@
 
 {% extends "base.html.twig" %}
 
+{% block stylesheets %}
+<link rel = "stylesheet" href = "/assets/css/index.css">
+{% endblock %}
+
 {% block content %}
-<form method = "post" id = "questionsAndAnswers" action = "question/result">
-{% for error in errors %}
-    <p class = "error">{{ error }}</p>
-{% endfor %}
-    <p class = "question">{{ question.question }}</p>
-    {% for choice in choices %}
-    <div class = "choiceBox" id = "choiceBox{{ choice.id }}">
-        {# For now, you only need to select one correct choice to "win" #}
-        {# You are redirected to the result page as soon as you select an answer #}
-        <input name = "choice" value = "{{ choice.id }}" type = "checkbox" class = "choice" 
-        id = "choice{{ choice.id }}" onchange="this.form.submit()" autocomplete = "off">
-        <label for = "choice{{ choice.id }}" class = "choice">{{ choice.answer }}</label>
-    </div>
+    <form method = "post" id = "questionsAndAnswers" action = "question/result">
+    {% for error in errors %}
+        <p class = "errors">{{ error }}</p>
     {% endfor %}
-</form>
-<a href = "" id = "passButton">¯\_(ツ)_/¯ Passer ¯\_(ツ)_/¯</a>
-{{ parent() }}
+        <p class = "question">{{ question.question }}</p>
+        {% for choice in choices %}
+        <div class = "choiceBox" id = "choiceBox{{ choice.id }}">
+            {# For now, you only need to select one correct choice to "win" #}
+            {# You are redirected to the result page as soon as you select an answer #}
+            <input name = "choice" value = "{{ choice.id }}" type = "checkbox" class = "choiceCheck"
+            id = "choice{{ choice.id }}" onchange="this.form.submit()" autocomplete = "off">
+            <label for = "choice{{ choice.id }}" class = "choice">{{ choice.answer }}</label>
+        </div>
+        {% endfor %}
+    </form>
+    <a class = "button" href = "">¯\_(ツ)_/¯ Passer ¯\_(ツ)_/¯</a>
+    {{ parent() }}
 {% endblock %}
