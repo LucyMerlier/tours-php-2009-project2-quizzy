@@ -1,8 +1,13 @@
 /* index page stylesheet */
 
+#questionsAndAnswers {
+    margin-bottom: 1em;
+}
+
 .question {
     text-align: center;
     word-wrap: break-word;
+    font-size: 1.5rem;
 }
 
 .choiceBox {
