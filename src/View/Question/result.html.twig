@@ -2,9 +2,13 @@
 
 {% extends "base.html.twig" %}
 
+{% block stylesheets %}
+    <link rel = "stylesheet" href = "/assets/css/result.css">
+{% endblock %}
+
 {% block content %}
-<div class = "result">
-    <p class = "messageResult" id = "winOrFailMessage">{{ message }}</p>
-    <a href = "" id = "passButton">Question suivante</a>
-</div>
+    <div class = "result">
+        <p class = "messageResult" id = "winOrFailMessage">{{ message }}</p>
+        <a href = "" class = "button">Question suivante</a>
+    </div>
 {% endblock %}

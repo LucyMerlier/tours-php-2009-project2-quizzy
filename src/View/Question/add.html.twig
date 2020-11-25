@@ -2,6 +2,10 @@
 
 {% extends "base.html.twig" %}
 
+{% block stylesheets %}
+<link rel = "stylesheet" href = "/assets/css/questionAdd.css">
+{% endblock %}
+
 {% block content %}
 <div class = "addQuestion">
     <p class="errors">{{ error }}</p>

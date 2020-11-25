@@ -1,3 +1,5 @@
+/* general stylesheet */
+
 @font-face {
     font-family: '3Dumb';
     src: url('../fonts/3Dumb.ttf')
@@ -11,7 +13,6 @@ body {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-    border: 2px black solid;
 }
 
 main {
@@ -32,33 +33,6 @@ main, footer {
 .titleLink {
     text-decoration: none;
     color: black;
-}
-
-.question {
-    text-align: center;
-    word-wrap: break-word;
-}
-
-.choiceBox {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-.choice {
-    padding: 15px 10px 15px 10px;
-    text-align: center;
-    background-color: fuchsia;
-    border-radius: 10px;
-    word-wrap: break-word;
-    margin: 5px;
-    width: 100%;
-    height: 20%;
-    max-height: 100px;
-}
-
-.choiceCheck {
-    display: none;
 }
 
 .notQuestion {
@@ -100,55 +74,4 @@ li {
 .errors {
     color: red;
     text-align: center;
-}
-
-/* question/add page */
-
-.addQuestion {
-    text-align: center;
-}
-
-.userQuestion, #userQuestion {
-    margin-top: 1em;
-    margin-bottom: 1em;
-}
-
-/* choices/add page */
-
-.addChoices {
-    text-align: center;
-}
-
-.userchoices {
-    margin-top: 1em;
-    margin-bottom: 0.5em;
-}
-
-.uservalidity {
-    margin-bottom: 1em;
-}
-
-.buttonChoicesAdd {
-    margin-top: 2em;
-    align-items: end;
-}
-
-/* added page */
-
-.addedChoices {
-    text-align: center;
-}
-
-.messageAdded {
-    font-size: 2em;
-}
-
-/* result page */
-
-.result {
-    text-align: center;
-}
-
-.messageResult {
-    font-size: 2em;
 }
