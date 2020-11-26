@@ -15,7 +15,7 @@
 }
 
 body {
-    max-width: 812px;
+    max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
     font-family: 'NerkoOne';
@@ -87,4 +87,10 @@ li {
 .errors {
     color: red;
     text-align: center;
+}
+
+@media screen and (min-width: 813px) {
+    .title {
+        font-size: 8rem;
+    }
 }

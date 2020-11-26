@@ -1,13 +1,34 @@
 .theDreamTeam {
     display: flex;
     flex-direction: column;
-    align-content: center;
     align-self: center;
     text-align: center;
 }
 
+    h2 {
+    text-align: center;
+}
+
 img {
-    width: 15rem;
-    height: 15rem;
+    width: 12rem;
+    height: 12rem;
     border-radius: 100%;
+}
+
+@media screen and (min-width: 700px) {
+    .theDreamTeam {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        align-items: center;
+        justify-items: center;
+    }
+    
+    .member {
+        width: 50%;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
 }
