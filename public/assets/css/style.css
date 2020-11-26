@@ -55,10 +55,11 @@ main, footer {
     font-family: 'NerkoOne';
     align-self: center;
     width: 100%;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 94, 156, 0.5);
+    border-radius: 10px;
     color: black;
     padding: 1em;
-    border: solid 1px;
     text-decoration: none;
     text-align: center;
     font-size: 1.2rem;
