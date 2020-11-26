@@ -12,15 +12,17 @@
         <p class = "errors">{{ error }}</p>
     {% endfor %}
         <p class = "question">{{ question.question }}</p>
-        {% for choice in choices %}
-        <div class = "choiceBox" id = "choiceBox{{ choice.id }}">
-            {# For now, you only need to select one correct choice to "win" #}
-            {# You are redirected to the result page as soon as you select an answer #}
-            <input name = "choice" value = "{{ choice.id }}" type = "checkbox" class = "choiceCheck"
-            id = "choice{{ choice.id }}" onchange="this.form.submit()" autocomplete = "off">
-            <label for = "choice{{ choice.id }}" class = "choice">{{ choice.answer }}</label>
+        <div class = "choices">
+            {% for choice in choices %}
+                <div class = "choiceBox" id = "choiceBox{{ choice.id }}">
+                    {# For now, you only need to select one correct choice to "win" #}
+                    {# You are redirected to the result page as soon as you select an answer #}
+                    <input name = "choice" value = "{{ choice.id }}" type = "checkbox" class = "choiceCheck"
+                    id = "choice{{ choice.id }}" onchange="this.form.submit()" autocomplete = "off">
+                    <label for = "choice{{ choice.id }}" class = "choice">{{ choice.answer }}</label>
+                </div>
+            {% endfor %}
         </div>
-        {% endfor %}
     </form>
     <a class = "button" href = "">¯\_(ツ)_/¯ Passer ¯\_(ツ)_/¯</a>
     {{ parent() }}

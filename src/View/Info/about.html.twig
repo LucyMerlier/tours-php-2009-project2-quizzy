@@ -2,16 +2,29 @@
 
 {% extends "base.html.twig" %}
 
+{% block stylesheets %}
+<link rel = "stylesheet" href = "/assets/css/about.css">
+<link rel = "stylesheet" href = "/assets/css/info.css">
+{% endblock %}
+
 {% block content %}
-<h1>Qui sommes nous?</h1>
-<div>
-    <img src = "" title="Lucy MERLIER">
-    <p>Lucy Merlier</p>
-    <img src = "" title="Florian BOULMÉ">
-    <p>Florian BOULMÉ</p>
-    <img src = "" title="Yusuf CELIK">
-    <p>Yusuf CELIK</p>
-    <img src = "" title="Maxime BOUET">
-    <p>Maxime BOUET</p>
+<h2>L'équipe Quizzy :</h2>
+<div class = "theDreamTeam">
+    <div class = "member lu">
+        <img src = "/assets/images/Lu.png" alt="Lucy MERLIER">
+        <p>Lucy "Dark Moule" Merlier</p>
+    </div>
+    <div class = "member flo">
+        <img src = "/assets/images/Flo.png" alt="Florian BOULMÉ">
+        <p>Florian "Dark Flo" BOULMÉ</p>
+    </div>
+    <div class = "member y">
+        <img src = "/assets/images/Y.png" alt="Yusuf CELIK">
+        <p>Yusuf "Jeune Padawan" CELIK</p>
+    </div>
+    <div class = "member max">
+        <img src = "/assets/images/Max.png" alt="Maxime BOUET">
+        <p>Maxime "Maitre Yoda" BOUET</p>
+    </div>
 </div>
 {% endblock %}
