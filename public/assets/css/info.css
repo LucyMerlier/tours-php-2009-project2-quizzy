@@ -1,0 +1,12 @@
+main {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+}
+
+p {
+    text-align: justify;
+}
+
+h2 {
+    text-align: center;
+}
