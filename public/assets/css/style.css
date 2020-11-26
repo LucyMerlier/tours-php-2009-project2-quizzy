@@ -20,7 +20,8 @@ body {
     margin-right: auto;
     font-family: 'NerkoOne';
     font-size: 1.2rem;
-    background-color: #B3E5FF;
+    background-image: url('../images/background.png');
+    background-size: cover;
 }
 
 main {
