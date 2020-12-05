@@ -8,6 +8,8 @@ It uses some cool vendors/libraries such as Twig and Grumphp.
 
 This simple MVC structure serves as a basis for a "quizz" type of web application called "Quizzy" that will propose an infinite flow of random questions to the user. From Quizzy's home page, you will be able to display a random question and its possible choices each time you refresh the page. You can click on one of the choices, and you will then be redirected to a page that tells you if the choice you selected is correct or not. For now, you only need to select one of the possible correct choices to win. You can add your own questions and the choices associated with them by clicking the "AJOUTE LES TIENNES" link at the bottom of the page, and following the instructions step by step.
 
+This is a fork made by myself (Lucy Merlier), in order to try and continue to update and improve Quizzy after the Wild Code School project 3 deadline is passed.
+
 
 ### Check on Travis
 
